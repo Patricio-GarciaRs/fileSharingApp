@@ -8,5 +8,6 @@ export const uploadFile = async (data) => {
         return response.data;
     } catch (error) {
         console.error('Error while calling API ', error.message);
+        return { path: ''};
     }
 }

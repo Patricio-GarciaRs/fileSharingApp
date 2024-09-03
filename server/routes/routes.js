@@ -14,7 +14,13 @@ router.get('/hello', (req, res)=>{
 
 })
 
-router.post('/upload', upload.single('file'), uploadImage)
+router.post('/upload', upload.single('file'), (req, res, next) => {
+    
+    console.log('Se recibio una peticion POST');
+    
+    next();
+    
+}, uploadImage)
 
 router.get('/file/:fileId', downloadImage);
 
